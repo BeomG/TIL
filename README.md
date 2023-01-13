@@ -14,6 +14,8 @@ git add . : 수정한 모든 값을 저장소에 보냄
 git status : 현재 상태 확인
 
 git commit -m "message" : 커밋 "저장 메세지"
+
+git remote remove [이름] : 이름을 갖고 있는 내용 삭제 (origin 오타가 있을 경우 사용해서 삭제 후 origin 다시 생성)
 ```
 
 ```
@@ -21,3 +23,4 @@ git push origin master : git에 오리진에 마스터로서 변경 사항 원�
 
 git pull : git에 저장되어 있는 내용을 현재 디렉토리로 가져오기
 ```
+
