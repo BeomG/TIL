@@ -1,9 +1,13 @@
 score = {
     'python': 80,
     'django': 89,
-    'web': 83
+    'web': 83,
 }
+# 1번
+score['algorithm'] = 90
 
-score[0] = 85
+# 2번
+score['python'] = 85
 
-print(score)
+# 3번
+print(sum(score.values())/len(score))
