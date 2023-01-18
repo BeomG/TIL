@@ -180,6 +180,7 @@ Escape sequence
 ```
 
 # 01_07
+
 ```
 제어문
 - 순차, 선택, 반복
@@ -195,17 +196,48 @@ Falsy
 
 반복문의 종류
 - while문
-	- 종료 조건에 해당하는 코드를 통해 반복문을 종료시켜야 함
+    - 종료 조건에 해당하는 코드를 통해 반복문을 종료시켜야 함
     - 특정 조건을 알고 있을 때
     - 조건이 참인 경우 들여쓰기 되어 있는 코드를 계속 반복
 - for 문
-	- 반복가능한 객체를 모두 순회하면 종료(별도의 종료 조건이 필요 없음)
+    - 반복가능한 객체를 모두 순회하면 종료(별도의 종료 조건이 필요 없음)
     - 반복 횟수를 알고 있을 때
  - 반복 제어
- 	- break, countinue, for-else
- 
- 
- 
-    
-    
+     - break, countinue, for-else
+```
+# 01_08
+
+```
+함수 종류
+- 내장함수
+	- 파이썬에 기본적으로 포함
+- 외장함수
+- 사용자 정의 함수
+
+Argument
+- 함수 호출 시 함수 parameter를 통해 전달되는 값
+	positional Argument
+    - 기본적으로 함수 호출 시 Argument는 위치에 따라 함수 내에 전달됨
+    keyword Argument
+    - 직접 변수의 이름으로 특정 Argument를 전달할 수 있음
+    Default Argumet Values
+    - 기본값을 지정하여 함수 호출 시 argument값을 설정하지 않도록 함
+
+Python의 범위(Scope)
+NameSpace
+- 식별자를 기억하는 공간
+- 식별자 이름 중복 가능
+1. Built in N
+2. Grobal N
+3. Enclosing N
+4. Local N
+- 변수를 찾는 순서는 = LEGB
+
+함수의 범위 주의
+- 함수 내에서 필요한 상위 scope변수는 argument로 넘겨서 활용
+- 함수로 값을 바꾸고자 한다면 항상 리턴 값을 사용하는 것을 추천
+
+
+
+
 ```
