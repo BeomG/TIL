@@ -205,18 +205,19 @@ Falsy
  - 반복 제어
      - break, countinue, for-else
 ```
+
 # 01_08
 
 ```
 함수 종류
 - 내장함수
-	- 파이썬에 기본적으로 포함
+    - 파이썬에 기본적으로 포함
 - 외장함수
 - 사용자 정의 함수
 
 Argument
 - 함수 호출 시 함수 parameter를 통해 전달되는 값
-	positional Argument
+    positional Argument
     - 기본적으로 함수 호출 시 Argument는 위치에 따라 함수 내에 전달됨
     keyword Argument
     - 직접 변수의 이름으로 특정 Argument를 전달할 수 있음
@@ -236,8 +237,145 @@ NameSpace
 함수의 범위 주의
 - 함수 내에서 필요한 상위 scope변수는 argument로 넘겨서 활용
 - 함수로 값을 바꾸고자 한다면 항상 리턴 값을 사용하는 것을 추천
+```
 
+# 01_19
 
+map(function, iterable)
 
+- 순회 가능한 데이터구조(iterable)의 모든 요소에 함수(function)를 적용하고, 그 결과를 map object로 반환
+
+filter
+
+- 순회 가능한 데이터 구조의 모든 요소에 함수 적용하거ㅗ, 그 결과가 True인 것들을 filter object로 반환
+
+zip(*iterables)
+
+- 복수의 iterable을 모아 튜플을 원소로 하는 zip object를 반환
+  
+  ```
+  name_list = ['신동민', '서재현', '박영서', '이태성', '정예원', '이은석']
+  age_list = [17, 18, 22, 24, 25, 19]
+  ```
+
+for each in zip(name_list, age_list):
+    print(each)
+
+for name, age in zip(name_list, age_list):
+    print(name,age)
 
 ```
+람다함수 (lamda[parameter] : 표현식)
+ - 표현식을 계산한 결괏값을 반환하는 함수로, 이름이 없는 함수여서 익명함수라고도 불림 
+ - 특징
+     - return문을 가질 수 없음
+    - 간편 조건문 외 조건문이나 반복문 가질 수 없음
+ - 장점
+     - 함수를 정의해서 사용하는 것보다 간결하게 사용 가능
+    - def를 사용할 수 없는 곳에서도 사용 가능
+```
+
+         # def my_mgic_fnc(n):
+      #     return n * 10
+    
+      map_obj = map(lambda n: n * 10 ,[1,2,3])
+      rlt = list(map_obj)
+    
+      print(rlt)
+    
+      # 람다
+      # lambda 매개변수 : 매개변수를 이용한 리턴값
+    
+      rlt = (lambda x: x * 10)(1)
+    
+      my_fnc = lambda n: n * 2
+      print(my_fnc(2))
+    ```
+
+재귀 함수(recursive fuction)
+
+- 자기 자신을 호출하는 함수
+- 무한한 호출이 못표 X. 알고리즘 설계 및 구현에서 유용
+  - 표현하기 쉬운 경우 ex. 점화식
+  - 변수의 사용 줄어들고, 코드 가독성 up
+- 1개 이상으 base case가 존재, 수렴하도록 작성
+
+재귀함수 주의사항
+- 재귀 함수는 base case에 도달할 때까지 함수 호출
+- 메모리 스택이 넘치면 동작x
+- 파이썬에서 최대 재귀깊이 1000번, 호출횟수 넘어가면 error
+
+반복문과 재귀 함수 비교
+- 알고리즘 자체가 재귀적인표현이 장녀스러운 경우 재귀함수를 사용
+- 재귀 호출은 변수사용을 줄여줄 수 있음
+- 재귀 호출은 입력 값이 커질 수록 연산속도 up
+
+```
+# def recur():
+
+# print('뿅')
+
+# recur()
+
+# recur()
+
+# 5! = 5 * 4 * 3 * 2 * 1
+
+def fac(n):
+    if n == 0:
+        return 1
+    return n * fac(n - 1)
+
+print(fac(5))
+```
+
+
+# 패킹/언패킹 연산자(Packing/Unpacking Operator)*
+```
+# 패킹 / 언패킹 *
+
+# 패킹
+# a, b = 1, 2, 3, 4
+a, *b = 1, 2, 3, 4
+
+print(a, b)
+
+# 언패킹
+def my_sum(a, b, c):
+    return a + b + c
+
+num_lst = [10, 20, 30]
+
+# rlt = my_sum(num_lst[0], num_lst[1], num_lst[2])
+rlt = my_sum(*num_lst)
+
+# 응용
+def test_1(a, *values):
+    reslt = 0
+    for value in values:
+        reslt += value
+        print(value)
+
+# test_1() # error
+test_1(1, 2) # 3
+test_1(1, 2, 3, 4) # 10
+
+def test_2(*args ,**kwargs):
+    print(kwargs, type(kwargs))
+    kwargs['name']
+    return kwargs
+
+test_2(1,2,3,4,name='aiden', age = 21)
+```
+모듈
+- 특정 기능을 하는 코드를 파이썬 파일(.py)단위로 작성
+
+패키지
+- 여러 모듈의 집합
+- 폴더 단위
+
+라이브러리
+- 다양한 패키지를 하나의 묶음으로
+
+pip (파이썬 패키지 관리자)
+- 패키지 설치, 삭제
