@@ -1,9 +1,8 @@
-def func2(a):
-    v  = a+1
-    return v
-def func1(a):
-    func2(a+1)
-    return a
+def fn_d(n):
+    num = n
+    for i in range(len(str(n))):
+        num += int(str(n)[i])
 
-t = func1(3)
-print(t)
+    return num
+
+print(fn_d(int(input())))
