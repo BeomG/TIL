@@ -1,13 +1,24 @@
+lst_a = []
+lst_b = []
 
-test_lst = [1, 2, 3, 7, 4, 6, 5]
-test_lst.sort()
-print(test_lst)
+for i in range(3):
+    a, b = map(int,input().split())
+    lst_a.append(a)
+    lst_b.append(b)
 
-# def check(x):
-#     return x[1]
+lst_a.sort()
+lst_b.sort()
 
-scores = [('eng', 88), ('sci', 90),('math', 80)]
-# 정렬
-# scores.sort(key=check)
-scores.sort(key=lambda x: x[1])
-print(scores)
+a = 0
+if lst_a[0] == lst_a[1]:
+    a = lst_a[2]
+elif lst_a[1] == lst_a[2]:
+    a = lst_a[0]
+
+b = 0
+if lst_b[0] == lst_b[1]:
+    b = lst_a[2]
+elif lst_b[1] == lst_b[2]:
+    b = lst_b[0]
+
+print(a, b)

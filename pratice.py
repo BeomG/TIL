@@ -1,13 +1,12 @@
-N = int(input())
-big = {}
+lst = []
+for i in range(1,31):
+    lst.append(i)
 
-for i in range(N):
-    x, y = map(int,input().split())
-    big[x] = y
+check = []
+for i in range(28):
+    N = int(input())
+    check.append(N)
 
-big_keys = list(big.keys())
-big_values = list(big.values())
-
-for num in range(1,N):
-    if big_keys[num-1] > big_keys[:num] and big_values[num-1] > big_values[:num]:
-        print(num)
+for i in lst:
+    if i not in check:
+        print(i)
