@@ -1,5 +1,4 @@
 def sugar(sugar):
-    cnt = 1
     lst_3 = []
     lst_6 = []
 
@@ -10,7 +9,7 @@ def sugar(sugar):
     for a in range(5000):
         for b in range(5000):
             if sugar == lst_6[a] + lst_3[b]:
-                print(b)
+                
                 
     
 print(sugar(18))
