@@ -8,5 +8,5 @@ def fee(minute, distance):
 
 
 
-fee(594, 50) #=> 91000
+fee(600, 50) #=> 91000
 fee(600, 110) #=> 10

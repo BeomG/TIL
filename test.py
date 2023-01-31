@@ -1,16 +1,30 @@
-import sys
-S = sys.stdin.readline()
-num = 0
-cnt = 0
-while num != int(S):
-    if int(S) == 0:
-        pass
-    elif int(S) < 10:
-        num = int(S[1] + S[1])
-        cnt += 1
-    else:
-        num = str(int(S[0]) + int(S[1])) + S[1]
-        cnt += 1
-        
-print(cnt)
+class Person:
+    def __init__(self):
+        self._age = 0
+
+    @property
+    def age(self): # getter
+        print('getter 호출 !')
+        return self._age
     
+    @age.setter
+    def age(self, age): # setter
+        print("Setter 호출 !")
+        self._age = age
+    
+    # age = property(get_age, set_age)
+
+
+
+# ///
+
+p1 = Person()
+#p1._age = 25 # 이거 안됨
+# print(p1._age) # 이거 안됨
+
+# 불편
+# p1.set_age(25)
+# print(p1.get_age())
+
+p1.age = 25
+print(p1.age)
