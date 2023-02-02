@@ -1,8 +1,10 @@
 import sys
-
 A, B ,V = map(int,sys.stdin.readline().split())
 
-num = V - A
-origin_C = A - B
-C = A - B
-cnt
+lgth = V - A
+day = A - B
+
+if lgth % day == 0:
+    print(lgth // day + 1)
+else:
+    print(lgth // day + 2)
