@@ -1,12 +1,31 @@
-lst = []
-for i in range(1,31):
-    lst.append(i)
+#1. 4 X 3 이차원 배열 입력
+M = 4
+N = 3
+'''
+12 34 32
+34 45 32
+12 34 32
+34 45 32
+'''
+l = [list(map(int, input().split())) for _ in range(M)]
+# 0 col의 합
+l[0][0] + l[1][0] + l[2][0] + l[3][0]
+# i col의 합
+l[0][i] + l[1][i] + l[2][i] + l[3][i]
 
-check = []
-for i in range(28):
-    N = int(input())
-    check.append(N)
+for col in range(N):
+    sumV = 0
+    for row in range(M):
+        sumV += l[row][col]
 
-for i in lst:
-    if i not in check:
-        print(i)
+
+## i row의 합
+# maxV = 0
+# for row in range(M):
+#     sumV = 0
+#     for col in range(N):
+#             sumV += l[row][col]
+#     print(sumV)
+#     if maxV < sumV:
+#         maxV = sumV
+# print(maxV)
