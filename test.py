@@ -1,13 +1,15 @@
-def atoi(s):
-    i = 0
-    for x in s:
-        i = i*10 + ord(x) - ord('0')
-    print(i,type(i))
+def push(item, size):
+    global top
+    top += 1
+    if top == size:
+        print('overflow')
+    else:
+        stack[top] = item
 
-def itoa(num):
-    s = ''
-    while num > 0:
-        asc = (num%10) + ord('0')
-        num = num // 10
-        s = chr(asc) + s
-    print(s, type(s))
+size = 10
+stack = [0] * size
+top = -1
+
+push(10, size)
+top += 1
+stack[top] = 20
