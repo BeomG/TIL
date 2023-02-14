@@ -3,9 +3,10 @@ N = int(sys.stdin.readline())
 lst = []
 for i in range(N):
     a, b = sys.stdin.readline().split()
+    a = int(a)
     lst.append((a, b))
 
-ans = sorted(lst, key = lambda x : ( x[0]))
+lst.sort(key = lambda x : x[0])
 
-for i in ans:
+for i in lst:
     print(i[0], i[1])
