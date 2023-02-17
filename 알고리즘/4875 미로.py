@@ -15,7 +15,7 @@ def dfs(row, col):
                     return 1
                 ST.append((newR, newC))
                 visited[newR][newC] = True
-    return 0
+    return 0-
 
 T = int(input())
 for tc in range(1, T+1):

@@ -1,17 +1,18 @@
 def step1(exp):
     ST = []
-    res = []
-    for c in exp:
-        if c.isdigit():
-            res.append(c)
+    lst = []
+    dct = {'+':1, '*':2 }
+    for i in exp:
+        if i.isdigit():
+            lst.append(i)
         else:
-            if ST:
-                res.append(ST.pop())
-                ST.append(c)
-            else:
-                ST.append(c)
+            while ST and dct[i] <= dct[ST[-1]]:
+                lst.append(ST.pop())
+            ST.append(i)
     while ST:
-        res.append(ST.pop())
-    return res
+        lst.append(ST.pop())
 
-print(step1(input()))
+    return lst
+
+
+
