@@ -14,7 +14,7 @@ for tc in range(1, T+1):
                 ni = si + di[k]
                 nj = sj + dj[k]
                 if 0 <= nj < N and 0 <= ni < N and arr[ni][nj] != 1:
-                    if arr[ni][nj] == 3:
+                    if arr[ni][nj] == 3: 
                         arr[ni][nj] = 1
                         print(1)
                         break
